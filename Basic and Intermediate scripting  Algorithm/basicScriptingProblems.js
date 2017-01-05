@@ -31,6 +31,45 @@ function findLongestWord(str) {
   return ary.pop();
 }
 
+function largestOfFour(arr) {
+  var ary=[];
+  arr.forEach(function(miniary){
+  	console.log("ary= "+miniary);
+  	ary.push(miniary.sort(function(a,b){return a-b;}).pop());
+  });
+  return ary;
+}
+
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  var str1="abc";
+  for(var i=0; i<3;i++){
+    str1=str1.concat(str1);
+  }
+  console.log(str1);
+  //console.log(str.substring(str.length-target.length));
+  return str.substring(str.length)===target;
+}
+
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  var x=(num<=3)? 0 : 3;
+  return (str.length>num)?str.slice(0, num-x)+"...":str;
+}
+
+function chunkArrayInGroups(arr, size) {
+  var ary=[];
+  for(var i=0; i<arr.length;i+=size){
+  	//in java this would of been array out of bounds
+  	//console.log(arr[i]+" "+arr[i+size-1]);
+    ary.push(arr.slice(i,i+size));
+  }
+  return ary;
+}
+
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
 
 /*match array elements*/
 function mutation(arr) {
@@ -108,6 +147,10 @@ function rot13(str) {
 //console.log(factorialize(5));
 //console.log(palindrome("race car"));
 console.log(findLongestWord("What if we try a super-long word such as otorhinolaryngology"));
+
+//console.log(truncateString("A-", 1));
+
+//confirmEnding("He has to give me a new name", "name");
 
 //console.log(rot13("SERR YBIR?"));
 /*---complete problems function calls
