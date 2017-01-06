@@ -58,12 +58,11 @@ function convertToRoman(num) {
 
     var letterMaker = function(n,str){
         return new Array(n).join(str); 
-    }
+    };
 
     if(str.length>=4){
         //-3 because we want all number that are in the thousand place
         over9thousand=str.slice(0, str.length-3);
-        console.log(over9thousand);
         resultAry.push(letterMaker(parseInt(over9thousand)+1, 
                 helperDictionary["1000"]));
         
@@ -77,9 +76,26 @@ function convertToRoman(num) {
     }
     return resultAry.join("");
 }
-
-//console.log(convertToRoman(9));
-console.log(convertToRoman(5145));
+//p3:test case
+/*console.log("My favorite Final Fantasy= "+convertToRoman(7));
+//console.log(convertToRoman(5145));
 //console.log(convertToRoman(501));
-//console.log(convertToRoman(1006));
-//console.log(convertToRoman(3999));
+//console.log(convertToRoman(3999));*/
+
+//-----p4: Wherefore art thou---------------------//
+/*Description:Make a function that looks through an array of objects 
+(first argument) and returns an array of all objects that have matching 
+property and value pairs (second argument). Each property and value pair of 
+the source object has to be present in the object from the collection if it is 
+to be included in the returned array.*/
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  
+  
+  // Only change code above this line
+  return arr;
+}
+
+
