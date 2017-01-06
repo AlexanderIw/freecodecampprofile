@@ -143,19 +143,16 @@ function rot13(str) {
   return aryOfStr.join(" ");
 }
 
+console.log(getIndexToIns([10, 20, 30, 40, 50], 35));
+
+/*---complete problems function calls
 //console.log(reverseString("Welcome"));
 //console.log(factorialize(5));
 //console.log(palindrome("race car"));
 console.log(findLongestWord("What if we try a super-long word such as otorhinolaryngology"));
-
 //console.log(truncateString("A-", 1));
-
 //confirmEnding("He has to give me a new name", "name");
-
 //console.log(rot13("SERR YBIR?"));
-/*---complete problems function calls
-console.log();
-console.log(getIndexToIns([10, 20, 30, 40, 50], 35));
 //console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 //console.log(bouncer([1, null, NaN, 2, undefined]));
 //console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
