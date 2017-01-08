@@ -89,13 +89,48 @@ property and value pairs (second argument). Each property and value pair of
 the source object has to be present in the object from the collection if it is 
 to be included in the returned array.*/
 function whatIsInAName(collection, source) {
-  // What's in a name?
-  var arr = [];
-  // Only change code below this line
-  
-  
-  // Only change code above this line
-  return arr;
+    var arr = [];
+    var test1={ first: "Romeo"};
+    var test2={ first: "Romeo"};
+
+    var compareMyObject= function(prop1, val1,prop2, val2){
+        if(prop1===prop2){
+            //console.log("do i make here");
+            if(val1===val2){
+                return true;
+            }
+        }
+        return false;
+    }
+    //console.log("are they equal "+compareMyObject(test1, test2));
+
+    
+    for(var i=0; i<collection.length; i++){
+
+        if(compareMyObject(collection[i]), source){
+            arr.push(collection[i]);
+        }
+
+        /*
+        for( var aryVal in collection[i]){
+            // console.log(aryVal+": "+collection[i][aryVal]);
+            //console.log("key= "+key)
+            if(compareMyObject(aryVal, collection[i][aryVal], key,source[key])){
+                // console.log(aryVal+" "+collection[i][aryVal]+" "+ key+" "+source[key]);
+                arr.push(collection[i]);
+                }
+        }
+        */
+    }
+    
+
+    console.log(arr);
+    return arr;
 }
 
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, 
+{ first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 });
 
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }],
+ { "a": 1, "b": 2 })
