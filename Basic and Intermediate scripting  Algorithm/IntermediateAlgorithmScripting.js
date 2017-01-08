@@ -90,47 +90,30 @@ the source object has to be present in the object from the collection if it is
 to be included in the returned array.*/
 function whatIsInAName(collection, source) {
     var arr = [];
-    var test1={ first: "Romeo"};
-    var test2={ first: "Romeo"};
 
-    var compareMyObject= function(prop1, val1,prop2, val2){
-        if(prop1===prop2){
-            //console.log("do i make here");
-            if(val1===val2){
-                return true;
+    var compareMyObject= function(obj, sourceObj){
+        var count=0;
+        for(var sourceKey in sourceObj){
+            for(var key in obj){
+                if(sourceKey===key && sourceObj[sourceKey]===obj[key]){
+                    count++;
+                    break;
+                }
             }
         }
-        return false;
+        return count===Object.keys(sourceObj).length;
     }
-    //console.log("are they equal "+compareMyObject(test1, test2));
-
-    
     for(var i=0; i<collection.length; i++){
 
-        if(compareMyObject(collection[i]), source){
+        if(compareMyObject(collection[i], source)){
             arr.push(collection[i]);
         }
-
-        /*
-        for( var aryVal in collection[i]){
-            // console.log(aryVal+": "+collection[i][aryVal]);
-            //console.log("key= "+key)
-            if(compareMyObject(aryVal, collection[i][aryVal], key,source[key])){
-                // console.log(aryVal+" "+collection[i][aryVal]+" "+ key+" "+source[key]);
-                arr.push(collection[i]);
-                }
-        }
-        */
     }
-    
-
-    console.log(arr);
     return arr;
 }
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, 
-{ first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
-whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 });
-
-whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }],
- { "a": 1, "b": 2 })
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, 
+{ first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+console.log(whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }));
+console.log(whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }],
+{ "a": 1, "b": 2 }));
