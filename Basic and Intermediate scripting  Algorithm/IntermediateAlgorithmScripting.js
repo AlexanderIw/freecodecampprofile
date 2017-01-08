@@ -104,16 +104,32 @@ function whatIsInAName(collection, source) {
         return count===Object.keys(sourceObj).length;
     }
     for(var i=0; i<collection.length; i++){
-
         if(compareMyObject(collection[i], source)){
             arr.push(collection[i]);
         }
     }
     return arr;
 }
-
-console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, 
+//p4:test case
+/*console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, 
 { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 console.log(whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }));
 console.log(whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }],
-{ "a": 1, "b": 2 }));
+{ "a": 1, "b": 2 }));*/
+
+//-----p5: Search and Replace ----------------------------------//
+/*Description: Perform a search and replace on the sentence using
+ the arguments provided and return the new sentence and preserve the 
+ cases of the swap word.*/
+
+ function myReplace(str, before, after) {
+     var reg= new RegExp(before, "i");
+     if(before[0]===before[0].toUpperCase()){//if cap
+         after=after.charAt(0).toUpperCase()+after.slice(1);
+     }
+    return str.replace(reg, after);
+}
+
+console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));
