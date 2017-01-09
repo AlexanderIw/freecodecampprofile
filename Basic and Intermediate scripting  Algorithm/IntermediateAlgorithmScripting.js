@@ -90,7 +90,6 @@ the source object has to be present in the object from the collection if it is
 to be included in the returned array.*/
 function whatIsInAName(collection, source) {
     var arr = [];
-
     var compareMyObject= function(obj, sourceObj){
         var count=0;
         for(var sourceKey in sourceObj){
@@ -133,3 +132,15 @@ console.log(whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c"
 console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
 console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));
+
+//-----p6:Pig Latin------------------------------------------------//
+/*Pig Latin takes the first consonant (or consonant cluster) of an English word,
+ moves it to the end of the word and suffixes an "ay".*/
+ function translatePigLatin(str) {
+  return str;
+}
+
+//p6 test
+translatePigLatin("california");
+translatePigLatin("paragraphs");
+translatePigLatin("glove");
