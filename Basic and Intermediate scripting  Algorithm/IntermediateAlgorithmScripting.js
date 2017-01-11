@@ -128,19 +128,31 @@ console.log(whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c"
      }
     return str.replace(reg, after);
 }
-
-console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+////p5:test case
+/*console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
 console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
-console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));
+console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));*/
 
 //-----p6:Pig Latin------------------------------------------------//
 /*Pig Latin takes the first consonant (or consonant cluster) of an English word,
  moves it to the end of the word and suffixes an "ay".*/
  function translatePigLatin(str) {
-  return str;
+     var vowels= ['a','e','i','o','u'], index=0;
+
+     if(vowels.indexOf(str[index])!== -1){  //initial edge case
+         return str+"way";
+     }
+
+     for(index=1;index<str.length;index++){
+         if(vowels.indexOf(str[index]) !==-1){//first vowel found
+             //console.log("index= "+ index+" ");
+             break;
+        }
+     }
+  return str.slice(index,str.length)+str.slice(0, index)+"ay";
 }
 
 //p6 test
-translatePigLatin("california");
-translatePigLatin("paragraphs");
-translatePigLatin("glove");
+console.log(translatePigLatin("california"));
+console.log(translatePigLatin("paragraphs"));
+console.log(translatePigLatin("algorithm"));
