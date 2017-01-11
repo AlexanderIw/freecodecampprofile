@@ -42,7 +42,6 @@ console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));//should return [4]*/
 
 //-----P3: Roman Numeral Converter-------------//
 /*Convert the given number into a roman numeral.*/
-
 function convertToRoman(num) {
     var resultAry=[], str=num.toString(),
         over9thousand="", placeValue=0;;
@@ -79,7 +78,6 @@ function convertToRoman(num) {
 //p3:test case
 /*console.log("My favorite Final Fantasy= "+convertToRoman(7));
 //console.log(convertToRoman(5145));
-//console.log(convertToRoman(501));
 //console.log(convertToRoman(3999));*/
 
 //-----p4: Wherefore art thou---------------------//
@@ -120,7 +118,6 @@ console.log(whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c"
 /*Description: Perform a search and replace on the sentence using
  the arguments provided and return the new sentence and preserve the 
  cases of the swap word.*/
-
  function myReplace(str, before, after) {
      var reg= new RegExp(before, "i");
      if(before[0]===before[0].toUpperCase()){//if cap
@@ -151,8 +148,33 @@ console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));*/
      }
   return str.slice(index,str.length)+str.slice(0, index)+"ay";
 }
-
 //p6 test
-console.log(translatePigLatin("california"));
+/*console.log(translatePigLatin("california"));
 console.log(translatePigLatin("paragraphs"));
-console.log(translatePigLatin("algorithm"));
+console.log(translatePigLatin("algorithm"));*/
+
+//-----P7:DNA Pairing--------------------------------------//
+/*Description:The DNA strand is missing the pairing element. 
+Take each character, get its pair, and return the results as a 
+2d array.Base pairs are a pair of AT and CG. Match the missing 
+element to the provided character.Return the provided character
+ as the first element in each array.*/
+function pairElement(str) {
+    var resultAry= [];
+    var myGeneticInformationDataEncoder={
+        "A":["A","T"],
+        "T":["T","A"],
+        "C":["C","G"],
+        "G":["G","C"]
+    };
+
+    for(var i=0; i<str.length;i++){
+        resultAry.push(myGeneticInformationDataEncoder[str[i]]);
+    }
+
+  return resultAry;
+}
+//p7 test
+console.log(pairElement("ATCGA"));
+console.log(pairElement("TTGAG"));
+console.log(pairElement("CTCTA"));
