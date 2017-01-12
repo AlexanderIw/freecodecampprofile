@@ -142,9 +142,9 @@ console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));*/
 
      for(index=1;index<str.length;index++){
          if(vowels.indexOf(str[index]) !==-1){//first vowel found
-             //console.log("index= "+ index+" ");
              break;
         }
+
      }
   return str.slice(index,str.length)+str.slice(0, index)+"ay";
 }
@@ -171,10 +171,44 @@ function pairElement(str) {
     for(var i=0; i<str.length;i++){
         resultAry.push(myGeneticInformationDataEncoder[str[i]]);
     }
-
   return resultAry;
 }
 //p7 test
-console.log(pairElement("ATCGA"));
+/*console.log(pairElement("ATCGA"));
 console.log(pairElement("TTGAG"));
-console.log(pairElement("CTCTA"));
+console.log(pairElement("CTCTA"));*/
+
+//-----P8:Missing letters--------------------------------------//
+/*Find the missing letter in the passed letter range and return it.
+If all letters are present in the range, return undefined.*/
+function fearNotLetter(str) {
+    var ascii=str.charCodeAt(0);
+    if(ascii!==97 && ascii!==65){return undefined; }
+
+    for(var i=0; i <str.length;i++){
+        if(ascii!==str.charCodeAt(i))
+            break;  //next letter is not correct
+        ascii++;//next letter
+    }
+  return String.fromCharCode(ascii);
+}
+//P8 test
+/*console.log(fearNotLetter("abcdefghjklmno"));
+console.log(fearNotLetter("bcd"));*/
+
+//-----P9:Boo who--------------------------------------//
+/*Check if a value is classified as a boolean primitive. 
+Return true or false.Boolean primitives are true and false.*/
+function booWho(bool) {
+    return typeof(bool)==="boolean";
+}
+console.log(booWho(true));
+console.log(booWho(false));
+console.log(booWho([1, 2, 3]));
+console.log(booWho([].slice));
+console.log(booWho({ "a": 1 }));
+console.log(booWho(1));
+console.log(booWho(NaN));
+console.log(booWho("a"));
+console.log(booWho("true"));
+console.log(booWho("false"));
