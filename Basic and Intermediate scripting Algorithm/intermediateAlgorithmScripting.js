@@ -44,7 +44,7 @@ console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));//should return [4]*/
 /*Convert the given number into a roman numeral.*/
 function convertToRoman(num) {
     var resultAry=[], str=num.toString(),
-        over9thousand="", placeValue=0;;
+        over9thousand="", placeValue=0;
 
     var helperDictionary={
         "1":"I","2":"II", "3":"III","4":"IV","5":"V",
@@ -60,7 +60,7 @@ function convertToRoman(num) {
     };
 
     if(str.length>=4){
-        //-3 because we want all number that are in the thousand place
+        //-3 because we want all number that are in the thousand place or higher
         over9thousand=str.slice(0, str.length-3);
         resultAry.push(letterMaker(parseInt(over9thousand)+1, 
                 helperDictionary["1000"]));
@@ -229,7 +229,31 @@ function uniteUnique(arr){
 
     return Array.from(new Set(flattenedArray));//a set contains all unique values
 }
-//p10
-console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+//p10 test
+/*console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 console.log(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]));
-console.log(uniteUnique([1, 2, 3], [5, 2, 1]));
+console.log(uniteUnique([1, 2, 3], [5, 2, 1]));*/
+
+//-----P11:Convert HTML Entities------------------------------------//
+/*Description:Convert the characters &, <, >, " (double quote), and ' (apostrophe),
+ in a string to their corresponding HTML entities.*/
+function convertHTML(str){
+    var reg=/[^a-zA-Z0-9 ]/g;
+    var lookupTable={
+        "&":"&amp;", 
+        "<":"&lt;",
+        ">":"&gt;", 
+        "\"":"&quot;", 
+         "\'":"&apos;"
+    };
+  
+    var replace=function (match){
+        return lookupTable[match];
+    };
+    //if there more than on match it will be repass to the function
+    return str.replace(reg, replace);
+}
+
+console.log(convertHTML("Dolce & Gabbana"));
+console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+console.log(convertHTML('Stuff in "quotation marks"'));
