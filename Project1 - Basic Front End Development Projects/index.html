@@ -8,7 +8,6 @@
     <meta name="description" content="Tech">
     <meta name="author" content="Niquepg">
     <title>Niquepg's Blog</title>
-
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="styles/main.css">
@@ -19,65 +18,136 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="pageTop" class="index">
+<body data-spy="scroll" data-target="#NavMain" id="pageTop" data-offset="50">
     <!--Navigation-->
     <nav class ="navbar navbar-default navbar-fixed-top navbar-custom" id="NavMain">
         <div class ="container">
             <div class="navbar-header page-scroll"><!-- Brand and toggle grouped-->     
                 <button type="button" class ="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
                 </button>
                 <a href="#pageTop" class="navbar-brand"><i class="fa fa-superpowers fa-1x" aria-hidden="true"></i> Niquepg</a>
             </div>
             <!-- Collect the nav links and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="page-scroll"><a href="#pageTop">Home</a></li>
+                    <li class="hidden"><a href="#header"></a></li>
+                    <li class="page-scroll"><a href="#about">About</a></li>
                     <li class="page-scroll"><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact" data-toggle="modal">Contact</a></li>
-                    <!--<li class="active"><a href="#">Home</a> </li>-->
+                    <li class="page-scroll"><a href="#contact">Contact</a></li>
                 </ul>
             </div><!-- End of .navbar collaspe-->
         </div><!--End of Container-->
     </nav>
-    <header id="header"><!-- Header AkA landing section-->
+    <!--Header page landing section-->
+    <header id="header" class="intro-header">
         <div class="container">
             <div class="row">
-                <div class="col-sm-5 profile">
-                    <img class="img-responsive" src="img/profile1.png" alt="Niquepg">
-                    <h2 class="name center">Niquepg</h2>
-                    <div class="pinned-tweet">
-                        <p>                       
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-thumb-tack fa-stack-1x"></i>
-                            </span>
-                             <em>Code Today, Code Tomorrow, Code Everyday!</em>
-                        </p>
+                <div class="col-sm-12">
+                    <div class="landing-page">
+                        <h1>Niquepg</h1>
+                        <hr class="logbar">
+                        <span class="subheading">Inspire to be IOS and Web developer!</span>
+                        <div class="social-icon">
+                            <a href="https://www.freecodecamp.com/niquepg" target="_blank"><button type="button" class="btn btn-secondary"><i class="fa fa-free-code-camp" aria-hidden="true"></i> FreeCodeCamp</button></a>
+                            <a href="https://twitter.com/niquepg" target="_blank"><button type="button" class="btn btn-secondary"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button></a>
+                            <a href="https://github.com/niquepg" target="_blank"><button type="button" class="btn btn-secondary"><i class="fa fa-github-alt" aria-hidden="true"></i> Github</button></a>
+                            <a href="https://www.youtube.com/channel/UC0CERhSDGH826E6ZUYyY--g" target="_blank"><button type="button" class="btn btn-secondary"><i class="fa fa-youtube" aria-hidden="true"></i> Yotube</button></a>
+                        </div>
                     </div>
-                    <span class="subheading">Inspire to be IOS and Web developer!</span>
-                </div>
-                <div class="col-sm-7">
-                    <div class="textprofile">
-                        <h2>About Me</h2>
-                        <hr class="superpower-light">
-                        <p class="main-message">I'm a graduate from the Queens College Computer Science Department (BS with minor in mathematics). I'm looking for a Full-Time Job. My current research interest are in speech process and machine learning. In my spare time, I am learning how to build mobile app for the iphone, working hard to become a full-stack developer, reading great books and continue my Japanese studies.</p>
-                    </div>  
                 </div>
             </div>
         </div>
     </header>
+    <!--About me Section-->
+    <section id="about">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 ">
+                    <h2 class="">About Me</h2>
+                    <hr class="superpower">
+                </div>
+                <div class="img-profile">
+                    <img class="img-responsive" src="img/profile1.png" alt="Niquepg">
+                    <h2 class="name">Niquepg</h2>
+                </div>
+            </div><!--End of Row-->
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="profile">
+                        <ol class="iconlist">
+                            <li class="dataicons">               
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-thumb-tack fa-stack-1x"></i>
+                                </span>
+                                <span class="profiletext"><em>Code Today, Code Tomorrow, Code Everyday!</em></span>
+                            </li>
+                            <li class="dataicons">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa fa-map-marker fa-stack-1x"></i>
+                                </span>
+                                <span class="profiletext">Queens, New York</span>
+                            </li>
+                            <li class="dataicons">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-language fa-stack-1x"></i>
+                                </span>
+                                <span class="profiletext">English,日本語</span>
+                            </li>
+                            <li class="dataicons">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-code  fa-stack-1x"></i>
+                                </span>
+                                <span class="profiletext">Java, C++, JS, python, ruby, HTML5, CSS</span>
+                            </li>
+                            <li class="dataicons">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-laptop   fa-stack-1x"></i>
+                                </span>
+                                <span class="profiletext">OSX and Ubuntu, Rails, Git, Mysql</span>
+                            </li>
+                            <li class="dataicons">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-terminal fa-stack-1x"></i>
+                                </span>
+                                <span class="profiletext">Sublime, Eclipse, and Visual Studio Code </span>
+                            </li>
+                        </ol>
+                    </div><!--End of profile-->
+                </div>
+                <div class="col-sm-6">
+                    <div class="aboutext">
+                        <p class="main-message">I am Niquepg a Software Engineer residing in the Big Apple. Welcome and thank you for visiting my page~</p>
+                        <p class="main-message">I have Bachelor of Science in Computer Science Department with minor in mathematics. I am “somewhat” of a self-taught Web and Mobile Developer. I have been using sites like <a href="#"> Udacity</a>, <a href="https://www.freecodecamp.com/niquepg" target="_blank">Freecodecamp</a>, <a href="https://www.codeschool.com/users/niquepg" target="_blank">Code School</a>, and <a href="https://www.codewars.com/users/niquepg" target="_blank"> Codewars</a> to further my education in my spare time. My current research interest is in machine learning.</p>
+                        <p class="main-message">I am currently looking for a Full-Time job. I wish to be part of a team, so I can work hard and continue to grow as a software engineer, employee and as a person, while building new or improving on existing software products.</p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--*******portfolio***-->
     <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Portfolio</h2>
-                    <hr class="star-primary">
+                    <hr class="superpower">
                 </div>
             </div><!--End of Row-->
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
                        <img src="img/portfolio/basic-project-image.png" class="img-responsive" alt="random quotes">
                     </a>
                     <h3>Random Quote Generator</h3>
@@ -85,7 +155,12 @@
                        <p><a href="#portfolioModal1"></a></p>
                 </div><!--End of .protfolio-item-->
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
                        <img src="img/portfolio/roman-numerals.png" class="img-responsive" alt="random quotes">
                     </a>
                     <div class="caption">   
@@ -94,28 +169,33 @@
                     </div>
                 </div><!--End of .protfolio-item-->
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                       <img src="img/portfolio/basic-project-image.png" class="img-responsive" alt="random quotes">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                       <img src="img/portfolio/localweather.png" class="img-responsive" alt="random quotes">
                     </a>
                     <h3>Show the Local Weather Incomplete</h3>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor</p>
                 </div><!--End of .protfolio-item-->
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                        <img src="img/portfolio/basic-project-image.png" class="img-responsive" alt="random quotes">
                     </a>
                     <h3>Build a Wikipedia Viewer Incomplete</h3>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor</p>
                 </div><!--End of .protfolio-item-->
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                        <img src="img/portfolio/basic-project-image.png" class="img-responsive" alt="random quotes">
                     </a>
                     <h3>Use the Twitch.tv JSON API Incomplete</h3>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor</p>
                 </div><!--End of .protfolio-item-->
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
                        <img src="img/portfolio/basic-project-image.png" class="img-responsive" alt="random quotes">
                     </a>
                     <h3>Random Quote Generator</h3>
@@ -124,12 +204,12 @@
             </div>
         </div>
     </section><!-- End of Portfolio-->
-    <section id="fda">
+    <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Contact</h2>
-                    <hr class="star-primary">
+                    <hr class="superpower">
                     <button type="button" class="btn btn-secondary"><i class="fa fa-free-code-camp" aria-hidden="true"></i> FreeCodeCamp</button>
                     <button type="button" class="btn btn-secondary"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button>
                     <button type="button" class="btn btn-secondary"><i class="fa fa-twitter" aria-hidden="true"></i> Github</button>
@@ -140,12 +220,78 @@
     </section>
     <footer class="navbar navbar-default navbar-static-bottom footer-custom"><!--footer-->
         <div class="container"> 
-        <p class="navbar-text pull-left">2017 © Niquepg <a href="https://github.com/niquepg/freecodecampprofile" target="_blank">view this site on github</a></p>
+        <p class="navbar-text text-center">2017 © Niquepg <a href="https://github.com/niquepg/freecodecampprofile" target="_blank">view this site on github</a></p>
         <a href="#pageTop" class="navbar-btn btn-danger btn pull-right">Top of The Page!</a>
         </div>
     </footer>
-    <!--Modal-->
-    <div class="modal fade" id="contact" role="dialog">
+    <!--Modals-->
+    <div class="modal fade portfolio-modal" id="portfolioModal1" role="dialog">
+        <div class="modal-dialog">
+            <div class = "modal-header">
+                <h4>Contact area</h4>
+            </div>
+            <div class="modal-body">
+                <p>In this Bootstrap 3 Tutorial, we will be creating a popup modal which can display text, images, videos or any other HTML element.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" data-dismiss="modal"> close</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal" id="portfolioModal2" role="dialog">
+        <div class="modal-dialog">
+            <div class = "modal-header">
+                <h4>Contact area</h4>
+            </div>
+            <div class="modal-body">
+                <p>In this Bootstrap 3 Tutorial, we will be creating a popup modal which can display text, images, videos or any other HTML element.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" data-dismiss="modal"> close</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade portfolio-modal" id="portfolioModal3" role="dialog">
+        <div class="modal-dialog">
+            <div class = "modal-header">
+                <h4>Contact area</h4>
+            </div>
+            <div class="modal-body">
+                <p>In this Bootstrap 3 Tutorial, we will be creating a popup modal which can display text, images, videos or any other HTML element.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" data-dismiss="modal"> close</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal" id="portfolioModal4" role="dialog">
+        <div class="modal-dialog">
+            <div class = "modal-header">
+                <h4>Contact area</h4>
+            </div>
+            <div class="modal-body">
+                <p>In this Bootstrap 3 Tutorial, we will be creating a popup modal which can display text, images, videos or any other HTML element.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" data-dismiss="modal"> close</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal" id="portfolioModal5" role="dialog">
+        <div class="modal-dialog">
+            <div class = "modal-header">
+                <h4>Contact area</h4>
+            </div>
+            <div class="modal-body">
+                <p>In this Bootstrap 3 Tutorial, we will be creating a popup modal which can display text, images, videos or any other HTML element.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" data-dismiss="modal"> close</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal" id="portfolioModal6" role="dialog">
         <div class="modal-dialog">
             <div class = "modal-header">
                 <h4>Contact area</h4>
@@ -160,5 +306,6 @@
     </div>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascript/blogscript.js"></script>
 </body>
 </html>
