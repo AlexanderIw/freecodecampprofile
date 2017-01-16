@@ -215,25 +215,26 @@ fa-map-marker  {
 #contact{
     background-color:#FFF;
     color: #000;
+    margin-bottom: 100px;
     /*border: 5px solid coral;*/ 
 }
-
-  a:focus,
- a:hover {
-     color: #0085A1;
- }
+#contact .security{
+    height: 150px;
+    margin: 25px 0px;
+    background-color: #2C3E50;
+    border: 5px solid #000;
  
- a img:focus,
- a img:hover {
-     cursor: zoom-in
- }
-
+    color:#FFF;
+}
 .footer-custom{
     background-color:#2C3E50;
     color: #FFF;
     font-size:16px;
     /*border: 5px solid black;*/
     margin-bottom: 0px;
+}
+#contact .cardback{
+    border: 5px solid black;
 }
 
 .footer-custom a, .footer-custom .navbar-text{
