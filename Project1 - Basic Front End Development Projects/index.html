@@ -59,7 +59,7 @@
             </div>
         </div>
     </header>
-    <!--About me Section-->
+    <!--******About me Section**********-->
     <section id="about">
         <div class="container">
             <div class="row text-center">
@@ -215,26 +215,32 @@
             </div>
             <div class="row">
                 <div class="col-sm-5">
-                    <h3>Please answer the security questin and provide a valid email:</h3>
-                    <from role="form"> 
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">Email</span>
-                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
-                        </div>
-                        <div class="security text-center">
-                            <h2>Security Question:</h2>
-                            <h1 id="question"> 1+1 </h1>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">Answer</span>
-                            <input type="text" class="form-control" placeholder="security question answer" aria-describedby="basic-addon1">
-                        </div><br/>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                     </from>
-                </div>
+                    <div id="theform">
+                        <from role="form"> 
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">Email</span>
+                                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                            </div>
+                            <div class="security text-center">
+                                <h2>Security Question:</h2>
+                                <h1 id="question"></h1>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">Answer</span>
+                                <input type="text" class="form-control" id="userinput" placeholder="security question answer" aria-describedby="basic-addon1">
+                            </div><br/>
+                            <button type="submit" class="btn btn-default" id="submit">Submit</button>
+                        </from>
+                     </div>
+                </div><!--END OF THE FORM-->
                 <div class="col-sm-5 pull-right">
-                    <div class="cardback">
-                        <img src="img/email.png" alt="my email" class="img-responsive">
+                    <div id ="cardtrick">   
+                        <div id="frontcard">
+                            <img src="img/security.png" alt="my email" class="img-responsive">
+                        </div>
+                        <div id="backcard" class="invisible">
+                            <img src="img/email.png" alt="my email" class="img-responsive">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -330,5 +336,6 @@
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/blogscript.js"></script>
+    <script type="text/javascript" src="javascript/contact.js"></script>
 </body>
 </html>
