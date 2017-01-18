@@ -254,6 +254,36 @@ function convertHTML(str){
     return str.replace(reg, replace);
 }
 
-console.log(convertHTML("Dolce & Gabbana"));
+/*console.log(convertHTML("Dolce & Gabbana"));
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
-console.log(convertHTML('Stuff in "quotation marks"'));
+console.log(convertHTML('Stuff in "quotation marks"'));*/
+
+//-----p12: Spinal Tap Case V0.1--------------------------------------//
+/*Description:Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.*/
+function spinalCase(str) {
+    // "It's such a fine line between stupid, and clever."
+    // --David St. Hubbins
+
+    //i hate my solution... need to go study regular expressions
+    //going to resolve this one later 
+    //with better regular expression should be able to Simplify this function
+    return str.split(/(?=[A-Z])/).map(function(s, index, ary) {
+    
+         if(s.match(/[\s_]/g)!==null){
+              return s.replace(/[\s_]/g,"-");
+            }
+         else{ 
+             if(index<ary.length-1){
+                return s+"-";
+             }else{
+                 return s;
+             }
+         }
+    }).join("").toLowerCase();
+}
+
+console.log(spinalCase("This Is Spinal Tap"));
+console.log(spinalCase("thisIsSpinalTap"));
+console.log(spinalCase("The_Andy_Griffith_Show"));
+console.log(spinalCase("Teletubbies say Eh-oh"));
+console.log(spinalCase("AllThe-small Things"));
