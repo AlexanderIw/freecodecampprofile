@@ -2,7 +2,7 @@ var randomQuotes= function (){
     var prev=[], curr=0;
     var quoteElem = document.getElementById("quote"),
         nameElem= document.getElementById("name"),
-        shareQuote=document.getElementById("twitterShareBtn");
+        shareTwitterQuote=document.getElementById("twitterShareBtn");
     
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
@@ -52,16 +52,18 @@ var randomQuotes= function (){
         nameElem.innerHTML=arrayOfQuotes[curr].name;
     });
 
-    twitterShareBtn.addEventListener("click", function(){
-        twitterShareBtn.setAttribute("href", "https://twitter.com/share");
-        twitterShareBtn.setAttribute("data-size","large");
-        twitterShareBtn.setAttribute("data-text",arrayOfQuotes[curr].quote+" "+arrayOfQuotes[curr].name);
-        twitterShareBtn.setAttribute("data-url","https://twitter.com/freeCodeCamp");
-        twitterShareBtn.setAttribute("data-hashtags","demo");
-        twitterShareBtn.setAttribute("data-via","Random Quote Machine");
-        twitterShareBtn.setAttribute("data-related","twitterapi,twitter");
-
-        //"https://twitter.com/intent/tweet?text="+arrayOfQuotes[curr].quote+" "+arrayOfQuotes[curr].name);
+   shareTwitterQuote.addEventListener("click", function(){
+       
+        shareTwitterQuote.setAttribute("href",
+        "https://twitter.com/intent/tweet?"+
+        "hashtags=FCC,randomQuotes&%20"+
+        //"original_referer=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&"+
+        //"ref_src=twsrc%5Etfw&"+
+        "related=twitterapi%2Ctwitter&"+
+        "text="+arrayOfQuotes[curr].quote+"%20-"+arrayOfQuotes[curr].name+"&tw_p=tweetbutton&"+
+        //"url=https%3A%2F%2Fniquepg.com%2Fquotes&"+
+        "via=niquepg");   
+        
     });
 }
  window.onload = function(){
