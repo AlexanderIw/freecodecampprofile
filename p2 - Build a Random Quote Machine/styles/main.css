@@ -1,0 +1,20 @@
+body{
+    background-color:#4d4d4d;
+}
+#main-body{
+    display: flex;
+    align-items: center;
+    background-color:#4d4d4d;
+    height:85vh;
+
+}
+#quoteblock{
+    display: block;
+    border: 5px solid pink;
+    background-color: #FFF;
+    background-color:hotpink;
+}
+
+#quoteblock  h2{
+    text-align: center;
+}
