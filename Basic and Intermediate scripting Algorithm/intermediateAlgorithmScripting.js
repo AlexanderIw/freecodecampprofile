@@ -264,11 +264,9 @@ function spinalCase(str) {
     // "It's such a fine line between stupid, and clever."
     // --David St. Hubbins
 
-    //i hate my solution... need to go study regular expressions
-    //going to resolve this one later 
+    //i hate my solution... need to go study regular expressions.going to resolve this one later 
     //with better regular expression should be able to Simplify this function
     return str.split(/(?=[A-Z])/).map(function(s, index, ary) {
-    
          if(s.match(/[\s_]/g)!==null){
               return s.replace(/[\s_]/g,"-");
             }
@@ -281,9 +279,44 @@ function spinalCase(str) {
          }
     }).join("").toLowerCase();
 }
-
-console.log(spinalCase("This Is Spinal Tap"));
+/*console.log(spinalCase("This Is Spinal Tap"));
 console.log(spinalCase("thisIsSpinalTap"));
 console.log(spinalCase("The_Andy_Griffith_Show"));
 console.log(spinalCase("Teletubbies say Eh-oh"));
-console.log(spinalCase("AllThe-small Things"));
+console.log(spinalCase("AllThe-small Things"));*/
+
+//-----P13: Sum All Primes----------------------------------------//
+/*Sum all the prime numbers up to and including the provided number.
+A prime number is defined as a number greater than one and having only two divisors, 
+one and itself. For example, 2 is a prime number because it's only divisible by one and two.
+The provided number may not be a prime.*/
+function sumPrimes(num) {
+    //my implementation of Sieve of Eratosthenes
+    var aryprime= [], 
+        sqrtnum= Math.floor(Math.sqrt(num)),
+        n=0, sum=0, i=0, j=0;
+
+    for(i =2; i<=num;i++){  //initially all set to true 2 to n
+        aryprime[i]=true;
+    }
+
+    for(i=2; i<=sqrtnum;i++){
+        if(aryprime[i]===true){
+            for(j=Math.pow(i,2);j<=num;j=Math.pow(i,2)+(n*i)){
+                aryprime[j]=false;
+                n++;
+            }
+        }
+        n=0;
+    }
+
+    for(i=2;i<=num;i++){
+        if(aryprime[i]===true){
+           //console.log(i);
+           sum+=i;
+        }
+    }
+  return sum;
+}
+console.log(sumPrimes(10));
+console.log(sumPrimes(977));
