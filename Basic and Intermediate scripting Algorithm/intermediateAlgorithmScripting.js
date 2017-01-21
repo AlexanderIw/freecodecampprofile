@@ -318,5 +318,32 @@ function sumPrimes(num) {
     }
   return sum;
 }
-console.log(sumPrimes(10));
-console.log(sumPrimes(977));
+
+/*console.log(sumPrimes(10));
+console.log(sumPrimes(977));*/
+
+//-----P14:Sum All Odd Fibonacci Numbers------------------------------//
+/*Given a positive integer num, return the sum of all odd
+Fibonacci numbers that are less than or equal to num.*/
+//note to self: relean about Memoization 
+function sumFibs(num) {
+    var fib1=0,fib2=1, fib3=0;
+    var sum = fib2;
+
+    for(var i=0; i<num-1; i++){
+        fib3=fib1+fib2;
+        fib1=fib2;
+        fib2=fib3;
+
+        if(fib3%2!==0 && fib3<=num){
+            sum+=fib3;
+        }
+    }
+  return sum;
+}
+
+console.log(sumFibs(1));
+console.log(sumFibs(1000));
+console.log(sumFibs(4));
+console.log(sumFibs(4000000));
+console.log(sumFibs(75024));

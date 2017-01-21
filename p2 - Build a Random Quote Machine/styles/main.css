@@ -1,20 +1,63 @@
 body{
-    background-color:#4d4d4d;
+     background-color:#70b9b0;
+     font-family: 'Source Sans Pro', sans-serif, Georgia, 'Times New Roman', Times, serif;
+     color:#FFF;
+}
+button:hover{
+    color: hotpink;
 }
 #main-body{
     display: flex;
     align-items: center;
-    background-color:#4d4d4d;
-    height:85vh;
+    background-color:#70b9b0;
+    height:100vh;
+}
 
+h1.title{
+    margin-bottom: 30px;
 }
 #quoteblock{
     display: block;
-    border: 5px solid pink;
-    background-color: #FFF;
-    background-color:hotpink;
 }
-
 #quoteblock  h2{
     text-align: center;
+}
+#quoteblock h2 i{
+    font-size: 16px;
+}
+.responsive-circle {
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0 auto 10px;
+    width: 75%;
+   /* background-color: red;*/
+}
+
+.responsive-circle::after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0;
+    margin-bottom: 20px;
+    padding-bottom: 100%;
+    width: 100%;
+    border: 5px solid hotpink;
+}
+.responsive-circle div {
+    color: white;
+    float: left;
+    line-height: 1em;
+    margin-top: -0.5em;
+    padding-top: 45%;
+    text-align: center;
+    width: 100%;
+}
+
+.nyc-circle::after {
+    background-color: #4e817c;
+}
+
+.circle-inner button:hover{
+    background-color: hotpink;
+    color:#FFF;
 }

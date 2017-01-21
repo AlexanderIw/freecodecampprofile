@@ -44,12 +44,11 @@ var randomQuotes= function (){
 
     document.getElementById("prevQuote").addEventListener("click", function(){
         if( prev.length<1){
-            console.log("i should make here");
             return 0;
         }
         curr= prev.shift();
         quoteElem.innerHTML=arrayOfQuotes[curr].quote;
-        nameElem.innerHTML=arrayOfQuotes[curr].name;
+        nameElem.innerHTML =arrayOfQuotes[curr].name;
     });
 
    shareTwitterQuote.addEventListener("click", function(){
@@ -57,8 +56,6 @@ var randomQuotes= function (){
         shareTwitterQuote.setAttribute("href",
         "https://twitter.com/intent/tweet?"+
         "hashtags=FCC,randomQuotes&%20"+
-        //"original_referer=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&"+
-        //"ref_src=twsrc%5Etfw&"+
         "related=twitterapi%2Ctwitter&"+
         "text="+arrayOfQuotes[curr].quote+"%20-"+arrayOfQuotes[curr].name+"&tw_p=tweetbutton&"+
         //"url=https%3A%2F%2Fniquepg.com%2Fquotes&"+
