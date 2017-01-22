@@ -254,7 +254,8 @@ function convertHTML(str){
     return str.replace(reg, replace);
 }
 
-/*console.log(convertHTML("Dolce & Gabbana"));
+/*p11 test
+console.log(convertHTML("Dolce & Gabbana"));
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
 console.log(convertHTML('Stuff in "quotation marks"'));*/
 
@@ -279,7 +280,8 @@ function spinalCase(str) {
          }
     }).join("").toLowerCase();
 }
-/*console.log(spinalCase("This Is Spinal Tap"));
+/*p12 test
+console.log(spinalCase("This Is Spinal Tap"));
 console.log(spinalCase("thisIsSpinalTap"));
 console.log(spinalCase("The_Andy_Griffith_Show"));
 console.log(spinalCase("Teletubbies say Eh-oh"));
@@ -319,10 +321,11 @@ function sumPrimes(num) {
   return sum;
 }
 
-/*console.log(sumPrimes(10));
+/*p13 test
+console.log(sumPrimes(10));
 console.log(sumPrimes(977));*/
 
-//-----P14:Sum All Odd Fibonacci Numbers v0.0.1------------------------------//
+//-----P14:Sum All Odd Fibonacci Numbers v1------------------------------//
 /*Given a positive integer num, return the sum of all odd
 Fibonacci numbers that are less than or equal to num.*/
 //note to self: relean about Memoization 
@@ -342,7 +345,8 @@ function sumFibs(num) {
   return sum;
 }
 
-/*console.log(sumFibs(1000));
+/*p14 test
+console.log(sumFibs(1000));
 console.log(sumFibs(4));
 console.log(sumFibs(4000000));
 console.log(sumFibs(75024));*/
@@ -371,14 +375,14 @@ function smallestCommons(arr) {
         }
         return true;
     }
-    //loop is danagerous because it could lead to infinite~
+    /*loop is danagerous because it could lead to infinite
+    if input are larger than variable could hold*/
     while(!isLCMAndRangeBetween(multiple, rangeArry)){
         multiple+=maxval;
     }
   return multiple;
 }
-
-//-----P15:Smallest Common Multiple v2------------------------------//
+//-----P15:Smallest Common Multiple v2: better version--------------------//
 function smallestCommonsVersion2(arr) {
     var minval = Math.min(arr[0], arr[1]),
         maxval = Math.max(arr[0], arr[1] );
@@ -389,7 +393,7 @@ function smallestCommonsVersion2(arr) {
     for(var i=0; i<=rangeArrLength; i++){
         rangeArry.push(num++);
     }
-    //console.log(rangeArry);
+
     function gcd(a,b){
         var t=0;
         while(b !==0){
@@ -404,13 +408,24 @@ function smallestCommonsVersion2(arr) {
     }
     
     multiple=rangeArry[0];
-    //extending lcm= a*b/gcd(a,b) --> lcm=a[i]*m/gcd(a[i],m)
-    for(var j=1; j<=rangeArrLength;j++){
+    for(var j=1; j<=rangeArrLength;j++){ 
+        //extending lcm= a*b/gcd(a,b) --> lcm_final=a[i]*m/gcd(a[i],m)
         multiple= lcm(rangeArry[j],multiple);
     }
   return multiple;
 }
 
+/*p15 test for v1 and v2
 console.log(smallestCommonsVersion2([1, 13]));
 console.log(smallestCommonsVersion2([1, 5]));
-console.log(smallestCommonsVersion2([23, 18]));
+console.log(smallestCommonsVersion2([23, 18]));*/
+
+//-----P16:Finders Keepersv1------------------------------//
+/*Create a function that looks through an array (first argument) and returns the first 
+element in the array that passes a truth test (second argument).*/
+function findElement(arr, func) {
+    //although filter goes throw the entire array. which bit inefficient for this prohblem
+    //We have simple solution as trader off~
+    return arr.filter(func).shift();
+}
+findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
