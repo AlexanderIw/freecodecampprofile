@@ -322,7 +322,7 @@ function sumPrimes(num) {
 /*console.log(sumPrimes(10));
 console.log(sumPrimes(977));*/
 
-//-----P14:Sum All Odd Fibonacci Numbers------------------------------//
+//-----P14:Sum All Odd Fibonacci Numbers v0.0.1------------------------------//
 /*Given a positive integer num, return the sum of all odd
 Fibonacci numbers that are less than or equal to num.*/
 //note to self: relean about Memoization 
@@ -342,8 +342,75 @@ function sumFibs(num) {
   return sum;
 }
 
-console.log(sumFibs(1));
-console.log(sumFibs(1000));
+/*console.log(sumFibs(1000));
 console.log(sumFibs(4));
 console.log(sumFibs(4000000));
-console.log(sumFibs(75024));
+console.log(sumFibs(75024));*/
+
+//-----P15:Smallest Common Multiple v1------------------------------//
+/*Find the smallest common multiple of the provided parameters that 
+can be evenly divided by both, as well as by all sequential numbers 
+in the range between these parameters.the range will be an array of
+two numbers that will not necessarily be in numerical order.*/
+function smallestCommons(arr) {
+    var minval = Math.min(arr[0], arr[1]),
+        maxval = Math.max(arr[0], arr[1] );
+    var num =minval, multiple=maxval,
+        rangeArrLength=maxval-minval;  
+    var rangeArry = [];
+
+    for(var i=0; i<rangeArrLength; i++){
+        rangeArry.push(num++);
+    }
+
+    function isLCMAndRangeBetween(key , arr){
+        for(var i=0; i< arr.length; i++){
+            if(key%arr[i]!==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    //loop is danagerous because it could lead to infinite~
+    while(!isLCMAndRangeBetween(multiple, rangeArry)){
+        multiple+=maxval;
+    }
+  return multiple;
+}
+
+//-----P15:Smallest Common Multiple v2------------------------------//
+function smallestCommonsVersion2(arr) {
+    var minval = Math.min(arr[0], arr[1]),
+        maxval = Math.max(arr[0], arr[1] );
+    var num =minval, multiple=0,
+        rangeArrLength=maxval-minval;  
+    var rangeArry = [];
+
+    for(var i=0; i<=rangeArrLength; i++){
+        rangeArry.push(num++);
+    }
+    //console.log(rangeArry);
+    function gcd(a,b){
+        var t=0;
+        while(b !==0){
+            t = b;
+            b = a%b;
+            a=t;
+        }
+        return a;
+    }
+    function lcm( a,b){
+        return (a*b)/gcd(a,b);
+    }
+    
+    multiple=rangeArry[0];
+    //extending lcm= a*b/gcd(a,b) --> lcm=a[i]*m/gcd(a[i],m)
+    for(var j=1; j<=rangeArrLength;j++){
+        multiple= lcm(rangeArry[j],multiple);
+    }
+  return multiple;
+}
+
+console.log(smallestCommonsVersion2([1, 13]));
+console.log(smallestCommonsVersion2([1, 5]));
+console.log(smallestCommonsVersion2([23, 18]));
