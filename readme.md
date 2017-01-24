@@ -11,7 +11,7 @@ tools:
 + npm bower
 + code editor [visual studio code](https://code.visualstudio.com/)
 
-technologies: HTML, CSS, JavaScript, bootstrap 3
+technologies: HTML, CSS, JavaScript, bootstrap 3, font awesome
 
 todolist:
 + fix styling on a tags
@@ -21,10 +21,12 @@ todolist:
 
 
 #### **project 2: build random quote generator**
-+ technologies: HTML, CSS, JavaScript, bootstrap 3, **_twitter share button_**
-+ can impprove on CSS
++ technologies: HTML, CSS, JavaScript, font awesome, twitter-widgets.js,bootstrap 3
++ API: **_twitter share button_**
++ todo: impprove on CSS
 
 #### **project 3: Show the Local Weather**
-+
++technologies: HTML, CSS, JavaScript, font awesome, Weather icons, bootstrap3
++ API:  
 
 
