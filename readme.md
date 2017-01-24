@@ -5,7 +5,8 @@ The basic assignments are implemented in JavaScript!
 
 ### **_project 1: Basic Front End Development Project: portfolio_**
 ---------------------------------------------------
-It is my portfolio where all my project 2 - N will be link together. 
+This is my portfolio where all my project 2 - N will be link together. 
+
 tools:
 + npm live-server
 + npm bower
@@ -23,7 +24,7 @@ todolist:
 #### **project 2: build random quote generator**
 + technologies: HTML, CSS, JavaScript, font awesome, twitter-widgets.js,bootstrap 3
 + API: **_twitter share button_**
-+ todo: impprove on CSS
++ todo: improve on styling
 
 #### **project 3: Show the Local Weather**
 +technologies: HTML, CSS, JavaScript, font awesome, Weather icons, bootstrap3
