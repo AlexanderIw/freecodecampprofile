@@ -452,25 +452,21 @@ function dropElements(arr, func) {
 console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
 console.log(dropElements([1, 2, 3], function(n) {return n > 0;}));*/
 
-/*Drop the elements of an array (first argument), starting from the front,
-until the predicate (second argument) returns true.
--The second argument, func, is a function you'll use to test the first 
-elements of the array to decide if you should drop it or not.
-Return the rest of the array, otherwise return an empty array.*/
+//-----P18:Steamroller ---------------------------------------//
+/*Descriptioon: Flatten a nested array. You must account for varying levels of nesting.*/
 function steamrollArray(arr) {
-/*
-    var index=0;
-    while(Array.isArray(arr[index])){
-
-        arr =arr.reduce(function(a, b) {
-            return a.concat(b);
+    //from the documentation page on reduce
+    //var flatten = arr => arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
+    function flatten(ary){
+        return ary.reduce(function(a, b) {
+            //if it is array recursive call to reduce it again until we reach the value in the array
+            return a.concat(Array.isArray(b)? flatten(b) :b);
         }, []);
     }
-    */
-     return arr;
+    return flatten(arr);
  }
    
-
-
-//console.log(steamrollArray([[["a"]], [["b"]]]));//should return ["a", "b"]
+//---p18: test functions ----//
+console.log(steamrollArray([[["a"]], [["b"]]]));//should return ["a", "b"]
 console.log(steamrollArray([1, [2], [3, [[4]]]]));
+console.log(steamrollArray([1, {}, [3, [[4]]]]) );

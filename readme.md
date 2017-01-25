@@ -27,7 +27,7 @@ todolist:
 + todo: improve on styling
 
 #### **project 3: Show the Local Weather**
-+technologies: HTML, CSS, JavaScript, font awesome, Weather icons, bootstrap3
++ technologies: HTML, CSS, JavaScript, font awesome, Weather icons, bootstrap3
 + API:  
 
 
