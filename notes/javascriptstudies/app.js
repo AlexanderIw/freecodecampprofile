@@ -1,14 +1,17 @@
-
-
-/*The execution context is created in two phases*/
-//first phase is called the creation phase. js engine allocate memory for variable and functions
-
-//Example of hositing 
-//this work because all function in js are put in too  memory entirly 
-b();
-//one get undefined because the assignment happen during execution and we get the place holder 
-console.log(a);
-var a ="hell world!";
-function b(){
-    console.log("called B!");
+// long running function
+function waitThreeSeconds() {
+    var ms = 3000 + new Date().getTime();
+    while (new Date() < ms){}
+    console.log('finished function');
 }
+
+function clickHandler() {
+    console.log('click event!');   
+}
+
+// listen for the click event
+document.addEventListener('click', clickHandler);
+
+
+waitThreeSeconds();
+console.log('finished execution');
