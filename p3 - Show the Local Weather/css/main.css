@@ -1,6 +1,5 @@
 body{
-     background-color:#70b9b0;
-     font-family: 'Source Sans Pro', sans-serif, Georgia, 'Times New Roman', Times, serif;
+     font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;
      color:#FFF;
 }
 button:hover{
@@ -9,13 +8,20 @@ button:hover{
 #main-body{
     display: flex;
     align-items: center;
-    background-color:#70b9b0;
     height:100vh;
+    background-image: url("/img/default.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+    text-align: center;
 }
 
 h1.title{
     margin-bottom: 30px;
-   font-family: Lobster, 'Open Sans', sans-serif;
+    font-family: Lobster, 'Open Sans', sans-serif;
 }
 #quoteblock{
     display: block;
@@ -30,8 +36,7 @@ h1.title{
     font-size: 80px;
     font-weight: 700;
     margin: 0 auto 10px;
-    width: 75%;
-   /* background-color: red;*/
+    width: 65%;
 }
 
 .responsive-circle::after {
@@ -42,7 +47,9 @@ h1.title{
     margin-bottom: 20px;
     padding-bottom: 100%;
     width: 100%;
-    border: 5px solid hotpink;
+    border: 2px solid #FFF;
+    
+
 }
 .responsive-circle div {
     color: white;
@@ -52,10 +59,12 @@ h1.title{
     padding-top: 45%;
     text-align: center;
     width: 100%;
+
 }
 
 .nyc-circle::after {
-    background-color: #4e817c;
+    background:rgba(22,22,22,0.95);
+
 }
 
 .circle-inner button:hover{
