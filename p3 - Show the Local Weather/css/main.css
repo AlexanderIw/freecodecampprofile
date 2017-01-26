@@ -18,7 +18,6 @@ button:hover{
     background-position:center;
     text-align: center;
 }
-
 h1.title{
     margin-bottom: 30px;
     font-family: Lobster, 'Open Sans', sans-serif;
@@ -38,7 +37,6 @@ h1.title{
     margin: 0 auto 10px;
     width: 65%;
 }
-
 .responsive-circle::after {
     border-radius: 50%;
     content: "";
@@ -48,8 +46,6 @@ h1.title{
     padding-bottom: 100%;
     width: 100%;
     border: 2px solid #FFF;
-    
-
 }
 .responsive-circle div {
     color: white;
@@ -59,14 +55,10 @@ h1.title{
     padding-top: 45%;
     text-align: center;
     width: 100%;
-
 }
-
 .nyc-circle::after {
-    background:rgba(22,22,22,0.95);
-
+    background:rgba(117,128,156,0.85);
 }
-
 .circle-inner button:hover{
     background-color: hotpink;
     color:#FFF;
