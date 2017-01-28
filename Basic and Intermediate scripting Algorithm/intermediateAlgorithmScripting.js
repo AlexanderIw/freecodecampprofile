@@ -465,8 +465,90 @@ function steamrollArray(arr) {
     }
     return flatten(arr);
  }
-   
 //---p18: test functions ----//
-console.log(steamrollArray([[["a"]], [["b"]]]));//should return ["a", "b"]
+/*console.log(steamrollArray([[["a"]], [["b"]]]));//should return ["a", "b"]
 console.log(steamrollArray([1, [2], [3, [[4]]]]));
-console.log(steamrollArray([1, {}, [3, [[4]]]]) );
+console.log(steamrollArray([1, {}, [3, [[4]]]]) );*/
+
+//-----P19: Binary Agents-----------------------------------------//
+function binaryAgent(str) {
+    var myarr = str.split(" ");
+    for(var i=0; i< myarr.length;i++){
+        myarr[i]= parseInt(myarr[i],2 );// binary is base 2
+    }
+  return String.fromCharCode.apply(this, myarr);
+}
+//finsih this assignment in under a minute xD
+/*console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));*/
+
+//-----p20: Everything Be True ---------------------------------------//
+/*Check if the predicate (second argument) is truthy on all
+ elements of a collection (first argument).Remember, you can 
+ access object properties through either dot notation or [] notation.*/
+
+function truthCheck(collection, pre) {
+    var shouldBeFalse = function(x){
+        //return false if one of the should be false value exist 
+        return !(x===0 || x===undefined || x===null || Number.isNaN(x) || x==="");
+    };
+
+    for(var i =0; i<collection.length; i++){
+        //if the property not exist and the value of the property is not true true false. all value are not true
+        if(!(collection[i].hasOwnProperty(pre) && shouldBeFalse(collection[i][pre])) ){
+            return false;
+        }
+    }
+    return true;
+}
+// note one has to handle underined, null, 0, NaN !==NaN @_@ and isNaN("afsd")===true wtf
+/*console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"));
+console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastFoward", "onBoat": null}], "onBoat") );
+console.log(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastFoward", "onBoat": true}], "onBoat"));
+console.log(truthCheck([{"single": ""}, {"single": "double"}], "single"));
+console.log(truthCheck([{"single": "double"}, {"single": undefined}], "single"));
+console.log(truthCheck([{"single": "double"}, {"single": NaN}], "single"));*/ 
+
+//-----p21: Arguments Optionalfinal assignment from FCC ---------------------------//
+/*Create a function that sums two arguments together. If only one argument is provided, 
+then return a function that expects one argument and returns the sum.
+For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+Calling this returned function with a single argument will then return the sum:
+var sumTwoAnd = addTogether(2);
+sumTwoAnd(3) returns 5.
+If either argument isn't a valid number, return undefined.*/
+function addTogether(outerVal) {
+
+    if(arguments.length >1){    // if it regular function 
+        var sum =0;
+        for(var i=0; i<arguments.length;i++){
+            if(typeof arguments[i]!=="number"){
+                return undefined;
+            }
+            sum+= arguments[i];
+        }
+        return sum;
+    }
+
+    if(typeof outerVal !=="number"){
+        return undefined;
+    }
+
+    var inner= function (innerVal){
+        if(typeof innerVal !=="number"){
+            return undefined;
+        }
+
+        return outerVal+innerVal;
+    };
+    return inner;
+}
+var sumTwoAnd = addTogether(3);
+console.log(sumTwoAnd(2 ));
+console.log(addTogether(2, 3));
+console.log(addTogether(2)(3));
+console.log(addTogether("http://bit.ly/IqT6zt"));
+console.log(addTogether(2, "3"));
+console.log(addTogether(2)([3]));

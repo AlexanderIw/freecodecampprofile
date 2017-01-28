@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css" type="text/css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" >
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -17,6 +18,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <title>Local Weather!</title>
 </head>
 <body>
     <div id="main-body">
@@ -30,13 +32,14 @@
                             <h2><!--quote -->
                                 <span id="location">Loading...</span>
                             </h2>
-                            <h3><span id="weather">Loading...</span> <i id="weather-icon" class="wi wi-cloud"></i> <span id="description"></span></h3>
+                            <h3><span id="weather">Loading...</span> <i id="weather-icon"></i> <span id="description"></span></h3>
                             <button class="btn btn-default" type="button" value="c" id="convert"><i class="wi wi-thermometer" aria-hidden="true"></i><span id="degree"> celsius</span></button>
                         </div>
                     </div>
                 </div><!-- End of block quote-->
             </div>
         </div>
+            <footer><p>Local Weather App. Coded by Niquepg for a FreeCodeCamp challenge. Weather provided by OpenWeatherMap API. Click temperature for F/C conversion.</p></footer>
         </div>
     </div>    
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
