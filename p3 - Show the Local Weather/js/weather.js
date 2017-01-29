@@ -37,7 +37,7 @@ var theWeather= function(){
             lon= position.coords.longitude;
 
             xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&APPID=dd4350d969e807334c5242068669b269', true);
-            xhr.send(null);// not sure what extra information needed
+            xhr.send();// not sure what extra information needed
 
             xhr.onload=function(){
                 if(xhr.status===200){    //code to process the results from the server
