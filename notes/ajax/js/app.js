@@ -13,9 +13,7 @@ $('#search').keyup(function(){
                 output +="<h4>"+ val.name +"</h4>";
                 output +="<p>"+ val.bio+"</p>";
                 output += "</li>";
-
             }
-
         });
         output +="</ul>";
         $("#update").html(output); 

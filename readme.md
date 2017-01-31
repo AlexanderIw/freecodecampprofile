@@ -11,7 +11,7 @@ tools:
 + npm [live-server](https://github.com/tapio/live-server)
 + npm [bower](https://github.com/bower/bower)
 + code editor [visual studio code](https://code.visualstudio.com/)
-+ creating images [sketch3](https://www.sketchapp.com/) 
++ created images with [sketch3](https://www.sketchapp.com/) 
 
 technologies: HTML, CSS, JavaScript, bootstrap 3, font awesome
 
@@ -43,10 +43,13 @@ global todolist:
     + make color profile forEach weather image, [animation loader](http://www.w3schools.com/howto/howto_css_loader.asp)
     + error handle if user dont grant access to geo location. maybe alternative way to get user location
 
-#### **project 4: Build a Wikipedia Viewer Incomplete**
-+ technologies:
-+ API:
-+ User Stories:
-    + I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
-    + I can click a button to see a random Wikipedia entry.
-    + Hint #3: Use this link to experiment with Wikipedia's API.
+#### **project 4: Build a Wikipedia Viewer**
++ technologies: HTML, CSS, JavaScript,bootstrap 3
++ API: [Wiki api](https://www.mediawiki.org/wiki/API:Main_page)
++ User Stories: 
+    + ~~I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.~~
+    + ~~I can click a button to see a random Wikipedia entry.~~
++ extra:
+    + animate the search bar
++ todo:
+    + greatly improve the styling 

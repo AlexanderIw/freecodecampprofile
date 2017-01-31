@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wikipedia Viewer">
+    <meta name="author" content="Niquepg">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <title>Wikipedia Viewer!</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class=".col-lg-12 .col-xs-12 .col-sm-12 .col-md-12">
+        <div id="search-box">
+            <form onsubmit="submitFn(this, event);" action="search" autocomplete="on">
+                <div class="search-wrapper">
+                    <h2>Welcome to Wikipedia Viewer!</h2>
+                    <h4><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random wiki page</a></h4>
+                    <div class="input-holder">
+                        <input id="search" name="search" class="search-input" type="text" placeholder="Type a query" />
+
+                       <button id="search_submit" type="submit"class="search-icon" onclick="searchToggle(this, event);"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                    <!--<span class="close" onclick="searchToggle(this, event);"></span>-->
+                    <div class="result-container"></div>
+                </div>
+                <div id="update"></div>
+            </form> 
+        </div>
+       </div>
+    </div>
+    <header>2017 © Niquepg <a href="https://github.com/niquepg/freecodecampprofile" target="_blank">view this site on github</a></p></header>
+</div>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/wiki.js"></script>
+</body>
+</html>
